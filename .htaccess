@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+# Activar rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/Aprendiendo_PHP/ProyectoPHPPoo/Error/Index
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) Index.php?Controller=$1&Action=$2
+</IfModule>
